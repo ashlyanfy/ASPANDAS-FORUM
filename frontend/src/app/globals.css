@@ -1,0 +1,101 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #05070c;
+  --bg2: #090d16;
+  --surface: #101520;
+  --surface2: #151c2b;
+  --surface3: #1c2638;
+  --border: #263149;
+  --border2: #35415c;
+  --muted: #53607c;
+  --dim: #77829d;
+  --mid: #a6afc5;
+  --text: #cbd3e6;
+  --bright: #f4f7fb;
+  --blue: #3158ff;
+  --violet: #7c4dff;
+  --gold: #d0a21c;
+  --green: #42c777;
+  --rose: #ff4f7b;
+  --cyan: #48d1cc;
+  --font-sans: "DM Sans", Inter, Arial, sans-serif;
+  --font-serif: Lora, Georgia, serif;
+  --font-mono: "Space Mono", Consolas, "Courier New", monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-width: 320px;
+  background: var(--bg);
+  color-scheme: dark;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(49, 88, 255, 0.16), transparent 34rem),
+    linear-gradient(180deg, #05070c 0%, #07101c 48%, #05070c 100%);
+  color: var(--text);
+  font-family: var(--font-sans), Arial, sans-serif;
+  letter-spacing: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+::selection {
+  background: rgba(49, 88, 255, 0.45);
+  color: var(--bright);
+}
+
+.page-shell {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.page-grid {
+  position: relative;
+  z-index: 1;
+  width: min(100% - 28px, 1240px);
+  margin: 0 auto;
+}
+
+.glass-panel {
+  border: 1px solid rgba(74, 91, 130, 0.45);
+  background: linear-gradient(180deg, rgba(16, 21, 32, 0.92), rgba(10, 14, 23, 0.92));
+  box-shadow: 0 24px 90px rgba(0, 0, 0, 0.38);
+  backdrop-filter: blur(18px);
+}
+
+.section-label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--muted);
+  font-family: var(--font-mono), Consolas, monospace;
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.section-label::after {
+  content: "";
+  height: 1px;
+  flex: 1;
+  background: var(--border);
+}

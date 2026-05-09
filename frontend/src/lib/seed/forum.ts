@@ -1,0 +1,91 @@
+import type { ForumCategory, ThreadSummary } from "@/types";
+import { users } from "./users";
+
+export const forumCategories: ForumCategory[] = [
+  {
+    id: "observations",
+    title: "Наблюдения",
+    description: "Отчеты, условия, объекты ночи",
+    topicCount: 124,
+    accent: "blue",
+  },
+  {
+    id: "astrophoto",
+    title: "Астрофото",
+    description: "Снимки, обработка, сетапы",
+    topicCount: 98,
+    accent: "violet",
+  },
+  {
+    id: "equipment",
+    title: "Оборудование",
+    description: "Телескопы, камеры, монтировки",
+    topicCount: 210,
+    accent: "gold",
+  },
+  {
+    id: "community",
+    title: "Новичкам",
+    description: "Первые наблюдения и вопросы",
+    topicCount: 65,
+    accent: "green",
+  },
+  {
+    id: "science",
+    title: "События",
+    description: "Затмения, планеты, метеоры",
+    topicCount: 32,
+    accent: "rose",
+  },
+];
+
+export const recentThreads: ThreadSummary[] = [
+  {
+    id: "m31-visible-tonight",
+    title: "M31 — как видно сегодня?",
+    categoryId: "observations",
+    type: "question",
+    author: users.starGazer,
+    lastActivityBy: users.lunarExplorer,
+    replyCount: 12,
+    viewCount: 156,
+    createdAt: "2026-05-09T20:15:00+05:00",
+    lastActivityAt: "2026-05-09T20:42:00+05:00",
+  },
+  {
+    id: "first-telescope-under-300k",
+    title: "Лучший телескоп до 300к",
+    categoryId: "equipment",
+    type: "question",
+    author: users.astroNomad,
+    lastActivityBy: users.deepSkyHunter,
+    replyCount: 34,
+    viewCount: 278,
+    createdAt: "2026-05-09T19:50:00+05:00",
+    lastActivityAt: "2026-05-09T20:37:00+05:00",
+  },
+  {
+    id: "orion-nebula-photo",
+    title: "Фото туманности Ориона",
+    categoryId: "astrophoto",
+    type: "report",
+    author: users.nebulaPro,
+    lastActivityBy: users.nebulaPro,
+    replyCount: 8,
+    viewCount: 98,
+    createdAt: "2026-05-09T18:20:00+05:00",
+    lastActivityAt: "2026-05-09T20:20:00+05:00",
+  },
+  {
+    id: "newton-collimation-help",
+    title: "Помогите с коллимацией Ньютона",
+    categoryId: "equipment",
+    type: "question",
+    author: users.deepSkyHunter,
+    lastActivityBy: users.starGazer,
+    replyCount: 15,
+    viewCount: 142,
+    createdAt: "2026-05-09T17:25:00+05:00",
+    lastActivityAt: "2026-05-09T19:58:00+05:00",
+  },
+];
