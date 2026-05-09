@@ -99,3 +99,113 @@ input {
   flex: 1;
   background: var(--border);
 }
+
+.starfield {
+  background:
+    radial-gradient(circle at 50% 0%, rgba(49, 88, 255, 0.12), transparent 34rem),
+    linear-gradient(180deg, rgba(5, 7, 12, 0.1), rgba(5, 7, 12, 0.42));
+}
+
+.starfield-layer {
+  position: absolute;
+  inset: -20%;
+  background-repeat: repeat;
+  will-change: transform, opacity;
+}
+
+.starfield-layer--far {
+  opacity: 0.42;
+  background-image:
+    radial-gradient(circle, rgba(218, 228, 255, 0.9) 0 1px, transparent 1.4px),
+    radial-gradient(circle, rgba(122, 150, 255, 0.58) 0 1px, transparent 1.4px);
+  background-position:
+    0 0,
+    32px 58px;
+  background-size:
+    113px 113px,
+    179px 179px;
+  animation: star-drift-far 150s linear infinite, star-breathe 7s ease-in-out infinite;
+}
+
+.starfield-layer--mid {
+  opacity: 0.55;
+  background-image:
+    radial-gradient(circle, rgba(244, 247, 251, 0.95) 0 1px, transparent 1.6px),
+    radial-gradient(circle, rgba(74, 143, 255, 0.72) 0 1.2px, transparent 1.8px);
+  background-position:
+    21px 37px,
+    83px 12px;
+  background-size:
+    157px 157px,
+    241px 241px;
+  animation: star-drift-mid 92s linear infinite, star-breathe 5.6s ease-in-out infinite reverse;
+}
+
+.starfield-layer--near {
+  opacity: 0.7;
+  background-image:
+    radial-gradient(circle, rgba(255, 255, 255, 0.96) 0 1.2px, transparent 2px),
+    radial-gradient(circle, rgba(196, 213, 255, 0.82) 0 1.5px, transparent 2.2px);
+  background-position:
+    7px 19px,
+    71px 96px;
+  background-size:
+    211px 211px,
+    307px 307px;
+  animation: star-drift-near 58s linear infinite, star-breathe 4.8s ease-in-out infinite;
+}
+
+.starfield-glow {
+  position: absolute;
+  left: 50%;
+  top: 72px;
+  width: min(760px, 80vw);
+  height: 520px;
+  transform: translateX(-50%);
+  border-radius: 999px;
+  background: rgba(49, 88, 255, 0.12);
+  filter: blur(80px);
+}
+
+@keyframes star-drift-far {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-80px, 120px, 0);
+  }
+}
+
+@keyframes star-drift-mid {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(120px, 160px, 0);
+  }
+}
+
+@keyframes star-drift-near {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-180px, 220px, 0);
+  }
+}
+
+@keyframes star-breathe {
+  0%,
+  100% {
+    opacity: 0.38;
+  }
+  50% {
+    opacity: 0.74;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .starfield-layer {
+    animation: none;
+  }
+}
