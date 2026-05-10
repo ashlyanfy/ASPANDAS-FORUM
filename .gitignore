@@ -51,3 +51,5 @@ Desktop.ini
 .turbo/
 .vercel/
 frontend/.vercel/
+
+backend/venv/
